@@ -86,7 +86,7 @@ const Hero = () => {
         {/* "Download Resume" button. White border, blue text, rounded corners,
             padding, and hover effect. */}
         <a 
-          href="/resume.pdf" 
+          href="/Resume.pdf" 
           download="Harsh_Kumar_Singh_Resume.pdf"
           className="border border-blue-600 text-blue-500 font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-blue-600 hover:text-white transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75 transform hover:scale-105 text-center"
         >
