@@ -40,14 +40,14 @@ const BlogSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <BookOpen className="w-8 h-8 text-blue-500" />
-            <Coffee className="w-6 h-6 text-blue-400" />
+            <BookOpen className="w-8 h-8 text-emerald-500" />
+            <Coffee className="w-6 h-6 text-emerald-400" />
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Developer Diaries
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Sharing my coding journey, lessons learned, and discoveries along the way. 
+            Sharing my coding journey, lessons learned, and discoveries along the way.
             From debugging nightmares to breakthrough moments — documenting it all.
           </p>
         </div>
@@ -59,24 +59,24 @@ const BlogSection = () => {
           rel="noopener noreferrer"
           className="block mb-12"
         >
-          <div className="bg-gradient-to-r from-blue-600/20 to-blue-800/20 rounded-xl p-8 border border-blue-500/30 hover:border-blue-400/50 transition-all duration-300 group cursor-pointer">
+          <div className="bg-gradient-to-r from-emerald-600/10 to-emerald-800/10 rounded-xl p-8 border border-emerald-500/30 hover:border-emerald-400/50 transition-all duration-300 group cursor-pointer">
             <div className="flex items-center gap-2 mb-4">
-              <span className="bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
+              <span className="bg-emerald-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
                 FEATURED
               </span>
-              <span className="text-blue-400 text-sm font-medium">
+              <span className="text-emerald-400 text-sm font-medium">
                 {blogPosts[0].category}
               </span>
             </div>
-            
-            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 group-hover:text-blue-400 transition-colors">
+
+            <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 group-hover:text-emerald-400 transition-colors">
               {blogPosts[0].title}
             </h3>
-            
+
             <p className="text-gray-300 text-lg leading-relaxed mb-6">
               {blogPosts[0].excerpt}
             </p>
-            
+
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4 text-gray-400">
                 <div className="flex items-center gap-1">
@@ -88,8 +88,8 @@ const BlogSection = () => {
                   <span className="text-sm">{blogPosts[0].readTime}</span>
                 </div>
               </div>
-              
-              <div className="flex items-center gap-2 text-blue-400 font-semibold group-hover:gap-3 transition-all">
+
+              <div className="flex items-center gap-2 text-emerald-400 font-semibold group-hover:gap-3 transition-all">
                 <span>Read More</span>
                 <ArrowRight className="w-4 h-4" />
               </div>
@@ -107,21 +107,21 @@ const BlogSection = () => {
               rel="noopener noreferrer"
               className="block"
             >
-              <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50 hover:border-blue-500/50 transition-all duration-300 group cursor-pointer hover:transform hover:scale-105">
+              <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50 hover:border-emerald-500/50 transition-all duration-300 group cursor-pointer hover:transform hover:scale-105">
                 <div className="flex items-center gap-2 mb-3">
-                  <span className="text-blue-400 text-sm font-medium">
+                  <span className="text-emerald-400 text-sm font-medium">
                     {post.category}
                   </span>
                 </div>
-                
-                <h4 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">
+
+                <h4 className="text-xl font-bold text-white mb-3 group-hover:text-emerald-400 transition-colors">
                   {post.title}
                 </h4>
-                
+
                 <p className="text-gray-300 leading-relaxed mb-4 line-clamp-3">
                   {post.excerpt}
                 </p>
-                
+
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-3 text-gray-400 text-sm">
                     <div className="flex items-center gap-1">
@@ -133,8 +133,8 @@ const BlogSection = () => {
                       <span>{post.readTime}</span>
                     </div>
                   </div>
-                  
-                  <ArrowRight className="w-4 h-4 text-blue-400 group-hover:translate-x-1 transition-transform" />
+
+                  <ArrowRight className="w-4 h-4 text-emerald-400 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
             </a>
@@ -148,20 +148,20 @@ const BlogSection = () => {
               Want to discuss these topics over coffee? ☕
             </h3>
             <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              I love chatting about development challenges, new technologies, and sharing experiences. 
+              I love chatting about development challenges, new technologies, and sharing experiences.
               Let's connect and learn from each other!
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
                 href="https://mickeydevblogs.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-blue-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-blue-700 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75 transform hover:scale-105 inline-block text-center"
+                className="bg-emerald-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-emerald-700 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75 transform hover:scale-105 inline-block text-center"
               >
                 Read All Posts
               </a>
-              <button className="border border-blue-600 text-blue-500 font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-blue-600 hover:text-white transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75 transform hover:scale-105">
+              <button className="border border-emerald-600 text-emerald-400 font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-emerald-600 hover:text-white transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75 transform hover:scale-105">
                 Schedule Coffee Chat
               </button>
             </div>

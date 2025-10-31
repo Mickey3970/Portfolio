@@ -10,9 +10,9 @@ const ProjectCard = ({ title, description, technologies, viewProjectLink, liveDe
         {status}
       </div>
     )}
-    
+
     {/* Project Title: blue text, bold, responsive font size, margin bottom. */}
-    <h3 className="text-blue-400 text-2xl md:text-3xl font-bold mb-4 leading-tight pr-20">
+    <h3 className="text-emerald-400 text-2xl md:text-3xl font-bold mb-4 leading-tight pr-20">
       {title}
     </h3>
     {/* Project Description: light gray text, responsive font size, leading (line height). */}
@@ -24,7 +24,7 @@ const ProjectCard = ({ title, description, technologies, viewProjectLink, liveDe
       {/* Map through technologies to render each tag. */}
       {technologies.map((tech, index) => (
         // Individual Technology Tag: blue background, white text, rounded, small padding.
-        <span key={index} className="bg-blue-600 text-white text-xs md:text-sm font-semibold px-3 py-1 rounded-full">
+        <span key={index} className="bg-emerald-600 text-white text-xs md:text-sm font-semibold px-3 py-1 rounded-full">
           {tech}
         </span>
       ))}
@@ -37,7 +37,7 @@ const ProjectCard = ({ title, description, technologies, viewProjectLink, liveDe
           href={viewProjectLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75"
+          className="bg-emerald-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-emerald-700 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75"
         >
           View Project
         </a>
@@ -48,7 +48,7 @@ const ProjectCard = ({ title, description, technologies, viewProjectLink, liveDe
           href={liveDemoLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="border border-blue-600 text-blue-500 font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-blue-600 hover:text-white transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75"
+          className="border border-emerald-600 text-emerald-400 font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-emerald-600 hover:text-white transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75"
         >
           Live Demo
         </a>
@@ -64,7 +64,7 @@ const App = () => {
     {
       title: "🎵 Interactive Drumkit Web App",
       description:
-         "Built an interactive web-based drum machine that responds to key presses (w, a, s, d, j, k, l) to play sounds, and supports features like recording, stop/play, saving and loading beats, and BPM control. A fun and creative app showing audio handling and user interaction in the browser.",
+        "Built an interactive web-based drum machine that responds to key presses (w, a, s, d, j, k, l) to play sounds, and supports features like recording, stop/play, saving and loading beats, and BPM control. A fun and creative app showing audio handling and user interaction in the browser.",
       technologies: ["HTML", "CSS", "JavaScript", "Web Audio API", "Responsive Design", "Firebase (Hosting)"],
       viewProjectLink: "https://github.com/Mickey3970/DrumKit", // Placeholder link
       liveDemoLink: "https://drumkit-12a38.web.app/",    // Placeholder link
@@ -86,7 +86,7 @@ const App = () => {
       description:
         "Developing an open-source platform to help coordinate resources and aid during disasters. The current MVP integrates Python backend, file uploads, and template-based frontend. Future plans include real-time maps, user dashboards, and mobile support.",
       technologies: ["Python", "Flask", "HTML", "CSS", "JavaScript", "SQLite", "Bootstrap"],
-      viewProjectLink: "https://github.com/Mickey3970/Disaster_Response_Platform", 
+      viewProjectLink: "https://github.com/Mickey3970/Disaster_Response_Platform",
       liveDemoLink: null,    // No demo yet
       status: "In Progress",
       statusColor: "bg-yellow-600 text-white"

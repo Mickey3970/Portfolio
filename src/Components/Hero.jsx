@@ -5,7 +5,7 @@ const Hero = () => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  
+
   // Array of texts to cycle through
   const texts = [
     'Aspiring Developer',
@@ -47,20 +47,20 @@ const Hero = () => {
     <div className="min-h-screen bg-gray-900 flex flex-col items-center justify-center p-4 font-inter">
       {/* Profile picture/initials container. Uses a blue background, rounded shape,
           and centers the text "JP". */}
-      <div className="w-32 h-32 bg-blue-600 rounded-full flex items-center justify-center mb-6 animate-pulse">
+      <div className="w-32 h-32 bg-emerald-600 rounded-full flex items-center justify-center mb-6 animate-pulse">
         <span className="text-white text-5xl font-bold">H</span>
       </div>
 
       {/* Greeting and Name section. "Hi, I'm" is white, and "Harsh" is blue. */}
       <h1 className="text-4xl md:text-5xl font-bold text-white mb-2 text-center">
-        Hi, I'm <span className="text-blue-500">Harsh</span>
+        Hi, I'm <span className="text-emerald-400">Harsh</span>
       </h1>
 
       {/* Typewriter effect container */}
-      <div className="text-2xl md:text-3xl font-bold text-blue-400 mb-6 text-center h-12 flex items-center">
+      <div className="text-2xl md:text-3xl font-bold text-emerald-400 mb-6 text-center h-12 flex items-center">
         <span className="relative">
           {displayText}
-          <span className="absolute -right-1 top-0 w-0.5 h-full bg-blue-400 animate-pulse"></span>
+          <span className="absolute -right-1 top-0 w-0.5 h-full bg-emerald-400 animate-pulse"></span>
         </span>
       </div>
 
@@ -74,21 +74,21 @@ const Hero = () => {
       <div className="flex flex-col sm:flex-row gap-4">
         {/* "Explore My Projects" button. Blue background, white text, rounded corners,
             padding, and hover effect. */}
-        <a 
-          href="https://github.com/Mickey3970" 
+        <a
+          href="https://github.com/Mickey3970"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75 transform hover:scale-105 text-center"
+          className="bg-emerald-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-emerald-700 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75 transform hover:scale-105 text-center"
         >
           Explore My Projects
         </a>
 
         {/* "Download Resume" button. White border, blue text, rounded corners,
             padding, and hover effect. */}
-        <a 
-          href="/Resume.pdf" 
+        <a
+          href="/Resume.pdf"
           download="Harsh_Kumar_Singh_Resume.pdf"
-          className="border border-blue-600 text-blue-500 font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-blue-600 hover:text-white transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75 transform hover:scale-105 text-center"
+          className="border border-emerald-600 text-emerald-400 font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-emerald-600 hover:text-white transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75 transform hover:scale-105 text-center"
         >
           Download Resume
         </a>
