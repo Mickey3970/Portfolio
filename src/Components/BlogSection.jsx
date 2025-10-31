@@ -35,7 +35,7 @@ const BlogSection = () => {
   ];
 
   return (
-    <section className="py-20 px-4 bg-gray-900">
+    <section className="py-20 px-4 bg-black/20 backdrop-blur-sm">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -59,7 +59,7 @@ const BlogSection = () => {
           rel="noopener noreferrer"
           className="block mb-12"
         >
-          <div className="bg-gradient-to-r from-emerald-600/10 to-emerald-800/10 rounded-xl p-8 border border-emerald-500/30 hover:border-emerald-400/50 transition-all duration-300 group cursor-pointer">
+          <div className="rounded-xl p-8 border border-white/20 bg-white/10 backdrop-blur-md hover:bg-white/15 transition-all duration-300 group cursor-pointer">
             <div className="flex items-center gap-2 mb-4">
               <span className="bg-emerald-600 text-white text-xs font-semibold px-3 py-1 rounded-full">
                 FEATURED
@@ -107,7 +107,7 @@ const BlogSection = () => {
               rel="noopener noreferrer"
               className="block"
             >
-              <div className="bg-gray-800/50 rounded-xl p-6 border border-gray-700/50 hover:border-emerald-500/50 transition-all duration-300 group cursor-pointer hover:transform hover:scale-105">
+              <div className="rounded-xl p-6 border border-white/20 bg-white/10 backdrop-blur-md transition-all duration-300 group cursor-pointer hover:transform hover:scale-105 hover:bg-white/15">
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-emerald-400 text-sm font-medium">
                     {post.category}
@@ -143,7 +143,7 @@ const BlogSection = () => {
 
         {/* Call to Action */}
         <div className="text-center">
-          <div className="bg-gray-800/30 rounded-2xl p-8 border border-gray-700/50">
+          <div className="rounded-2xl p-8 border border-white/20 bg-white/10 backdrop-blur-md">
             <h3 className="text-2xl font-bold text-white mb-4">
               Want to discuss these topics over coffee? ☕
             </h3>
@@ -157,11 +157,11 @@ const BlogSection = () => {
                 href="https://mickeydevblogs.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-emerald-600 text-white font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-emerald-700 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75 transform hover:scale-105 inline-block text-center"
+                className="px-8 py-3 rounded-lg border border-white/30 text-white font-semibold backdrop-blur-md bg-white/10 hover:bg-white/20 transition-all duration-300 shadow-lg inline-block text-center"
               >
                 Read All Posts
               </a>
-              <button className="border border-emerald-600 text-emerald-400 font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-emerald-600 hover:text-white transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75 transform hover:scale-105">
+              <button className="px-8 py-3 rounded-lg border border-white/30 text-white font-semibold backdrop-blur-md bg-white/10 hover:bg-white/20 transition-all duration-300 shadow-lg">
                 Schedule Coffee Chat
               </button>
             </div>

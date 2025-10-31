@@ -2,7 +2,7 @@ import React from 'react';
 
 const PortfolioFooter = () => {
   return (
-    <footer className="bg-gradient-to-b from-gray-900 to-slate-900 text-white">
+    <footer className="text-white bg-black/20 backdrop-blur-sm">
       {/* Vision Statement Section */}
       <div className="py-20 px-6">
         <div className="max-w-5xl mx-auto text-center">
@@ -26,7 +26,7 @@ const PortfolioFooter = () => {
       </div>
 
       {/* Copyright Section */}
-      <div className="bg-slate-900 py-6 px-6 border-t border-gray-700">
+      <div className="py-6 px-6 border-t border-white/20 bg-white/5">
         <div className="max-w-5xl mx-auto text-center">
           <p className="text-gray-400 text-sm">
             © 2025 Harsh. All rights reserved.

@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 // ProjectCard component for individual project details.
 const ProjectCard = ({ title, description, technologies, viewProjectLink, liveDemoLink, status, statusColor }) => (
   // Card container: dark background, rounded, padding, shadow, responsive width.
-  <div className="bg-gray-800 rounded-xl p-6 shadow-lg flex flex-col items-start w-full md:w-1/2 lg:w-2/5 xl:w-1/3 min-h-[400px] relative">
+  <div className="rounded-xl p-6 shadow-lg flex flex-col items-start w-full md:w-1/2 lg:w-2/5 xl:w-1/3 min-h-[400px] relative border border-white/20 bg-white/10 backdrop-blur-md">
     {/* Status Badge (if provided) */}
     {status && (
       <div className={`absolute top-4 right-4 px-3 py-1 rounded-full text-xs font-semibold ${statusColor}`}>
@@ -24,7 +24,7 @@ const ProjectCard = ({ title, description, technologies, viewProjectLink, liveDe
       {/* Map through technologies to render each tag. */}
       {technologies.map((tech, index) => (
         // Individual Technology Tag: blue background, white text, rounded, small padding.
-        <span key={index} className="bg-emerald-600 text-white text-xs md:text-sm font-semibold px-3 py-1 rounded-full">
+        <span key={index} className="bg-emerald-600/70 text-white text-xs md:text-sm font-semibold px-3 py-1 rounded-full">
           {tech}
         </span>
       ))}
@@ -37,7 +37,7 @@ const ProjectCard = ({ title, description, technologies, viewProjectLink, liveDe
           href={viewProjectLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-emerald-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-emerald-700 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75"
+          className="px-6 py-3 rounded-lg border border-white/30 text-white font-semibold backdrop-blur-md bg-white/10 hover:bg-white/20 transition-all duration-300 shadow-lg text-center"
         >
           View Project
         </a>
@@ -48,7 +48,7 @@ const ProjectCard = ({ title, description, technologies, viewProjectLink, liveDe
           href={liveDemoLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="border border-emerald-600 text-emerald-400 font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-emerald-600 hover:text-white transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75"
+          className="px-6 py-3 rounded-lg border border-white/30 text-white font-semibold backdrop-blur-md bg-white/10 hover:bg-white/20 transition-all duration-300 shadow-lg text-center"
         >
           Live Demo
         </a>
@@ -132,7 +132,7 @@ const App = () => {
     // The animation classes are removed from here.
     <div
       ref={sectionRef} // Attach the ref to this div to detect scroll
-      className="min-h-screen bg-gray-900 flex flex-col items-center p-8 font-inter"
+      className="min-h-screen flex flex-col items-center p-8 font-inter bg-black/20 backdrop-blur-sm"
     >
       {/* Section Title: white text, bold, large font size, margin bottom, text-shadow for depth. */}
       <h2 className="text-white text-4xl md:text-5xl font-bold mb-12 text-center drop-shadow-lg">

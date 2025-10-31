@@ -53,7 +53,7 @@ const ContactSection = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 flex flex-col items-center justify-center p-4">
+    <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-black/20 backdrop-blur-sm">
       <div className="max-w-4xl w-full">
         {/* Header */}
         <div className="text-center mb-12">
@@ -73,7 +73,7 @@ const ContactSection = () => {
         <div className="grid md:grid-cols-2 gap-8 mb-12">
 
           {/* Coffee Chat Option */}
-          <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-blue-500 transition-all duration-300">
+          <div className="rounded-xl p-6 border border-white/20 bg-white/10 backdrop-blur-md transition-all duration-300">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center">
                 <Calendar className="w-6 h-6 text-white" />
@@ -104,14 +104,14 @@ const ContactSection = () => {
               href="https://calendly.com/harsh2004mckv"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full bg-emerald-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-emerald-700 transition duration-300 transform hover:scale-105 text-center block"
+              className="w-full px-6 py-3 rounded-lg border border-white/30 text-white font-semibold backdrop-blur-md bg-white/10 hover:bg-white/20 transition-all duration-300 shadow-lg text-center block"
             >
               Schedule Coffee Chat
             </a>
           </div>
 
           {/* Project Inquiry */}
-          <div className="bg-gray-800 rounded-xl p-6 border border-gray-700">
+          <div className="rounded-xl p-6 border border-white/20 bg-white/10 backdrop-blur-md">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center">
                 <Send className="w-6 h-6 text-white" />
@@ -135,7 +135,7 @@ const ContactSection = () => {
                   placeholder="Your Name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-emerald-500 transition-colors"
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-emerald-400 transition-colors backdrop-blur"
                   required
                 />
               </div>
@@ -147,7 +147,7 @@ const ContactSection = () => {
                   placeholder="Your Email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-emerald-500 transition-colors"
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-emerald-400 transition-colors backdrop-blur"
                   required
                 />
               </div>
@@ -159,7 +159,7 @@ const ContactSection = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={4}
-                  className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-emerald-500 transition-colors resize-none"
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:border-emerald-400 transition-colors resize-none backdrop-blur"
                   required
                 />
               </div>
@@ -167,7 +167,7 @@ const ContactSection = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full border border-emerald-600 text-emerald-400 font-semibold py-3 px-6 rounded-lg hover:bg-emerald-600 hover:text-white transition duration-300 transform hover:scale-105 disabled:opacity-60 disabled:cursor-not-allowed"
+                className="w-full px-6 py-3 rounded-lg border border-white/30 text-white font-semibold backdrop-blur-md bg-white/10 hover:bg-white/20 transition-all duration-300 shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? 'Sending…' : 'Send Message'}
               </button>
@@ -192,7 +192,7 @@ const ContactSection = () => {
               href="https://www.linkedin.com/in/harsh-kumar-singh-57392b27a"
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-gray-800 hover:bg-emerald-600 border border-gray-700 hover:border-emerald-500 rounded-full p-4 transition-all duration-300 transform hover:scale-110"
+              className="group rounded-full p-4 transition-all duration-300 transform hover:scale-110 border border-white/30 backdrop-blur-md bg-white/10 hover:bg-white/20"
               aria-label="LinkedIn"
             >
               <Linkedin className="w-6 h-6 text-emerald-400 group-hover:text-white" />
@@ -201,14 +201,14 @@ const ContactSection = () => {
               href="https://github.com/Mickey3970"
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-gray-800 hover:bg-emerald-600 border border-gray-700 hover:border-emerald-500 rounded-full p-4 transition-all duration-300 transform hover:scale-110"
+              className="group rounded-full p-4 transition-all duration-300 transform hover:scale-110 border border-white/30 backdrop-blur-md bg-white/10 hover:bg-white/20"
               aria-label="GitHub"
             >
               <Github className="w-6 h-6 text-emerald-400 group-hover:text-white" />
             </a>
             <a
               href="mailto:harsh2004mckv@gmail.com"
-              className="group bg-gray-800 hover:bg-emerald-600 border border-gray-700 hover:border-emerald-500 rounded-full p-4 transition-all duration-300 transform hover:scale-110"
+              className="group rounded-full p-4 transition-all duration-300 transform hover:scale-110 border border-white/30 backdrop-blur-md bg-white/10 hover:bg-white/20"
               aria-label="Email"
             >
               <Mail className="w-6 h-6 text-emerald-400 group-hover:text-white" />

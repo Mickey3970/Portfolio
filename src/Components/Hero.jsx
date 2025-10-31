@@ -78,7 +78,7 @@ const Hero = () => {
           href="https://github.com/Mickey3970"
           target="_blank"
           rel="noopener noreferrer"
-          className="bg-emerald-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-emerald-700 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75 transform hover:scale-105 text-center"
+          className="px-6 py-3 rounded-lg border border-white/30 text-white font-semibold backdrop-blur-md bg-white/10 hover:bg-white/20 transition-all duration-300 shadow-lg text-center"
         >
           Explore My Projects
         </a>
@@ -88,7 +88,7 @@ const Hero = () => {
         <a
           href="/Resume.pdf"
           download="Harsh_Kumar_Singh_Resume.pdf"
-          className="border border-emerald-600 text-emerald-400 font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-emerald-600 hover:text-white transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-opacity-75 transform hover:scale-105 text-center"
+          className="px-6 py-3 rounded-lg border border-white/30 text-white font-semibold backdrop-blur-md bg-white/10 hover:bg-white/20 transition-all duration-300 shadow-lg text-center"
         >
           Download Resume
         </a>

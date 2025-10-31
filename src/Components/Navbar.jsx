@@ -27,7 +27,7 @@ const Navbar = ({ matrixEnabled = true, onToggleMatrix = () => { } }) => {
           <li>
             <label className="inline-flex items-center gap-2 select-none cursor-pointer">
               <span className="text-sm text-gray-300">Matrix</span>
-              <span className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${matrixEnabled ? 'bg-emerald-500/70' : 'bg-gray-600'}`}>
+              <span className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors border border-white/30 backdrop-blur-md ${matrixEnabled ? 'bg-emerald-500/40' : 'bg-white/10'}`}>
                 <input
                   type="checkbox"
                   className="sr-only"
@@ -50,7 +50,7 @@ const Navbar = ({ matrixEnabled = true, onToggleMatrix = () => { } }) => {
             <li>
               <label className="inline-flex items-center gap-3 select-none cursor-pointer">
                 <span className="text-sm text-gray-300">Matrix</span>
-                <span className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${matrixEnabled ? 'bg-emerald-500/70' : 'bg-gray-600'}`}>
+                <span className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors border border-white/30 backdrop-blur-md ${matrixEnabled ? 'bg-emerald-500/40' : 'bg-white/10'}`}>
                   <input
                     type="checkbox"
                     className="sr-only"
