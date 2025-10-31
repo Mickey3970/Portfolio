@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
 
-const Navbar = () => {
+const Navbar = ({ matrixEnabled = true, onToggleMatrix = () => { } }) => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="bg-[#111726]">
+    <nav className="bg-[#0b0f14]/95 backdrop-blur supports-[backdrop-filter]:backdrop-blur sticky top-0 z-20">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between relative">
         {/* Logo */}
         <span className="text-white font-bold text-2xl">Harsh.dev</span>
@@ -20,18 +20,48 @@ const Navbar = () => {
         </button>
 
         {/* Desktop Nav - Always visible at md and up */}
-        <ul className="flex max-md:hidden gap-10 text-blue-400 font-normal text-lg items-center">
+        <ul className="flex max-md:hidden gap-10 text-emerald-400 font-normal text-lg items-center">
           <li><a href="#home" className="hover:text-white transition">Home</a></li>
           <li><a href="#projects" className="hover:text-white transition">Projects</a></li>
           <li><a href="#contact" className="hover:text-white transition">Contact</a></li>
+          <li>
+            <label className="inline-flex items-center gap-2 select-none cursor-pointer">
+              <span className="text-sm text-gray-300">Matrix</span>
+              <span className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${matrixEnabled ? 'bg-emerald-500/70' : 'bg-gray-600'}`}>
+                <input
+                  type="checkbox"
+                  className="sr-only"
+                  checked={matrixEnabled}
+                  onChange={onToggleMatrix}
+                  aria-label="Toggle Matrix background"
+                />
+                <span className={`inline-block h-5 w-5 transform rounded-full bg-white shadow transition-transform ${matrixEnabled ? 'translate-x-6' : 'translate-x-1'}`}></span>
+              </span>
+            </label>
+          </li>
         </ul>
 
         {/* Mobile Nav - Only visible when open */}
         {open && (
-          <ul className="flex flex-col md:hidden gap-6 text-blue-400 font-normal text-lg absolute top-16 left-0 w-full bg-[#111726] p-4 z-10">
+          <ul className="flex flex-col md:hidden gap-6 text-emerald-400 font-normal text-lg absolute top-16 left-0 w-full bg-[#0b0f14]/95 p-4 z-10">
             <li><a href="#home" onClick={() => setOpen(false)} className="hover:text-white transition">Home</a></li>
             <li><a href="#projects" onClick={() => setOpen(false)} className="hover:text-white transition">Projects</a></li>
             <li><a href="#contact" onClick={() => setOpen(false)} className="hover:text-white transition">Contact</a></li>
+            <li>
+              <label className="inline-flex items-center gap-3 select-none cursor-pointer">
+                <span className="text-sm text-gray-300">Matrix</span>
+                <span className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors ${matrixEnabled ? 'bg-emerald-500/70' : 'bg-gray-600'}`}>
+                  <input
+                    type="checkbox"
+                    className="sr-only"
+                    checked={matrixEnabled}
+                    onChange={(e) => { onToggleMatrix(); }}
+                    aria-label="Toggle Matrix background"
+                  />
+                  <span className={`inline-block h-5 w-5 transform rounded-full bg-white shadow transition-transform ${matrixEnabled ? 'translate-x-6' : 'translate-x-1'}`}></span>
+                </span>
+              </label>
+            </li>
           </ul>
         )}
       </div>

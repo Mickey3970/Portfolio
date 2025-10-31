@@ -3,3 +3,23 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Matrix theme base: darker background and emerald accents */
+:root {
+  --matrix-accent: 16 185 129; /* emerald-500 */
+}
+
+.matrix-theme body {
+  background-color: #0a0f0a;
+}
+
+/* Utility helpers if needed by components */
+.text-matrix {
+  color: rgb(var(--matrix-accent));
+}
+.border-matrix {
+  border-color: rgba(var(--matrix-accent), 0.6);
+}
+.bg-matrix {
+  background-color: rgba(var(--matrix-accent), 0.15);
+}
