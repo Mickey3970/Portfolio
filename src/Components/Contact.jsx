@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Coffee, Calendar, Send, Clock, MapPin, Linkedin, Github, Twitter, Mail } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { Coffee, Calendar, Send, Clock, MapPin, Linkedin, Github, Mail } from 'lucide-react';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +9,8 @@ const ContactSection = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [status, setStatus] = useState({ type: '', message: '' });
+  const [isSectionVisible, setIsSectionVisible] = useState(false);
+  const sectionRef = useRef(null);
 
   const handleInputChange = (e) => {
     setFormData({
@@ -52,8 +54,37 @@ const ContactSection = () => {
     }
   };
 
+  useEffect(() => {
+    const element = sectionRef.current;
+
+    if (!element) {
+      return;
+    }
+
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    if (mediaQuery.matches) {
+      setIsSectionVisible(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsSectionVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.25 }
+    );
+
+    observer.observe(element);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-black/20 backdrop-blur-sm">
+    <div ref={sectionRef} className={`min-h-screen flex flex-col items-center justify-center p-4 bg-black/20 section-motion transform-gpu ${isSectionVisible ? 'is-visible' : ''}`}>
       <div className="max-w-4xl w-full">
         {/* Header */}
         <div className="text-center mb-12">
@@ -73,7 +104,7 @@ const ContactSection = () => {
         <div className="grid md:grid-cols-2 gap-8 mb-12">
 
           {/* Coffee Chat Option */}
-          <div className="rounded-xl p-6 border border-white/20 bg-white/10 backdrop-blur-md transition-all duration-300">
+          <div className="interactive-card rounded-xl p-6 border border-white/20 bg-white/10 backdrop-blur-md transform-gpu" tabIndex={0} role="group">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center">
                 <Calendar className="w-6 h-6 text-white" />
@@ -104,14 +135,14 @@ const ContactSection = () => {
               href="https://calendly.com/harsh2004mckv"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full px-6 py-3 rounded-lg border border-white/30 text-white font-semibold backdrop-blur-md bg-white/10 hover:bg-white/20 transition-all duration-300 shadow-lg text-center block"
+              className="interactive-button transform-gpu transition-transform duration-300 ease-in-out w-full px-6 py-3 rounded-lg border border-white/30 text-white font-semibold backdrop-blur-md bg-white/10 hover:bg-white/20 shadow-lg text-center block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black/30"
             >
               Schedule Coffee Chat
             </a>
           </div>
 
           {/* Project Inquiry */}
-          <div className="rounded-xl p-6 border border-white/20 bg-white/10 backdrop-blur-md">
+          <div className="interactive-card rounded-xl p-6 border border-white/20 bg-white/10 backdrop-blur-md transform-gpu" tabIndex={0} role="group">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-12 h-12 bg-emerald-600 rounded-full flex items-center justify-center">
                 <Send className="w-6 h-6 text-white" />
@@ -167,7 +198,7 @@ const ContactSection = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full px-6 py-3 rounded-lg border border-white/30 text-white font-semibold backdrop-blur-md bg-white/10 hover:bg-white/20 transition-all duration-300 shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
+                className="interactive-button transform-gpu transition-transform duration-300 ease-in-out w-full px-6 py-3 rounded-lg border border-white/30 text-white font-semibold backdrop-blur-md bg-white/10 hover:bg-white/20 shadow-lg disabled:opacity-60 disabled:cursor-not-allowed focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black/30"
               >
                 {isSubmitting ? 'Sending…' : 'Send Message'}
               </button>
@@ -192,7 +223,7 @@ const ContactSection = () => {
               href="https://www.linkedin.com/in/harsh-kumar-singh-57392b27a"
               target="_blank"
               rel="noopener noreferrer"
-              className="group rounded-full p-4 transition-all duration-300 transform hover:scale-110 border border-white/30 backdrop-blur-md bg-white/10 hover:bg-white/20"
+              className="group interactive-icon rounded-full p-4 transform-gpu transition-transform duration-300 ease-in-out border border-white/30 backdrop-blur-md bg-white/10 hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black/30"
               aria-label="LinkedIn"
             >
               <Linkedin className="w-6 h-6 text-emerald-400 group-hover:text-white" />
@@ -201,14 +232,14 @@ const ContactSection = () => {
               href="https://github.com/Mickey3970"
               target="_blank"
               rel="noopener noreferrer"
-              className="group rounded-full p-4 transition-all duration-300 transform hover:scale-110 border border-white/30 backdrop-blur-md bg-white/10 hover:bg-white/20"
+              className="group interactive-icon rounded-full p-4 transform-gpu transition-transform duration-300 ease-in-out border border-white/30 backdrop-blur-md bg-white/10 hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black/30"
               aria-label="GitHub"
             >
               <Github className="w-6 h-6 text-emerald-400 group-hover:text-white" />
             </a>
             <a
               href="mailto:harsh2004mckv@gmail.com"
-              className="group rounded-full p-4 transition-all duration-300 transform hover:scale-110 border border-white/30 backdrop-blur-md bg-white/10 hover:bg-white/20"
+              className="group interactive-icon rounded-full p-4 transform-gpu transition-transform duration-300 ease-in-out border border-white/30 backdrop-blur-md bg-white/10 hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-black/30"
               aria-label="Email"
             >
               <Mail className="w-6 h-6 text-emerald-400 group-hover:text-white" />

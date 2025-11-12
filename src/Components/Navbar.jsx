@@ -12,7 +12,7 @@ const Navbar = ({ matrixEnabled = true, onToggleMatrix = () => { } }) => {
 
         {/* Hamburger Icon for Mobile */}
         <button
-          className="md:hidden text-blue-400 text-3xl"
+          className="md:hidden text-blue-400 text-3xl interactive-button transform-gpu transition-transform duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
@@ -21,11 +21,11 @@ const Navbar = ({ matrixEnabled = true, onToggleMatrix = () => { } }) => {
 
         {/* Desktop Nav - Always visible at md and up */}
         <ul className="flex max-md:hidden gap-10 text-emerald-400 font-normal text-lg items-center">
-          <li><a href="#home" className="hover:text-white transition">Home</a></li>
-          <li><a href="#projects" className="hover:text-white transition">Projects</a></li>
-          <li><a href="#contact" className="hover:text-white transition">Contact</a></li>
+          <li><a href="#home" className="nav-link interactive-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent">Home</a></li>
+          <li><a href="#projects" className="nav-link interactive-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent">Projects</a></li>
+          <li><a href="#contact" className="nav-link interactive-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent">Contact</a></li>
           <li>
-            <label className="inline-flex items-center gap-2 select-none cursor-pointer">
+            <label className="inline-flex items-center gap-2 select-none cursor-pointer interactive-button transform-gpu transition-transform duration-300 ease-in-out">
               <span className="text-sm text-gray-300">Matrix</span>
               <span className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors border border-white/30 backdrop-blur-md ${matrixEnabled ? 'bg-emerald-500/40' : 'bg-white/10'}`}>
                 <input
@@ -43,12 +43,12 @@ const Navbar = ({ matrixEnabled = true, onToggleMatrix = () => { } }) => {
 
         {/* Mobile Nav - Only visible when open */}
         {open && (
-          <ul className="flex flex-col md:hidden gap-6 text-emerald-400 font-normal text-lg absolute top-16 left-0 w-full bg-[#0b0f14]/95 p-4 z-10">
-            <li><a href="#home" onClick={() => setOpen(false)} className="hover:text-white transition">Home</a></li>
-            <li><a href="#projects" onClick={() => setOpen(false)} className="hover:text-white transition">Projects</a></li>
-            <li><a href="#contact" onClick={() => setOpen(false)} className="hover:text-white transition">Contact</a></li>
+          <ul className="mobile-menu flex flex-col md:hidden gap-6 text-emerald-400 font-normal text-lg absolute top-16 left-0 w-full bg-[#0b0f14]/95 p-4 z-10 rounded-b-xl border border-white/10">
+            <li><a href="#home" onClick={() => setOpen(false)} className="nav-link interactive-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0f14]">Home</a></li>
+            <li><a href="#projects" onClick={() => setOpen(false)} className="nav-link interactive-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0f14]">Projects</a></li>
+            <li><a href="#contact" onClick={() => setOpen(false)} className="nav-link interactive-link focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0b0f14]">Contact</a></li>
             <li>
-              <label className="inline-flex items-center gap-3 select-none cursor-pointer">
+              <label className="inline-flex items-center gap-3 select-none cursor-pointer interactive-button transform-gpu transition-transform duration-300 ease-in-out">
                 <span className="text-sm text-gray-300">Matrix</span>
                 <span className={`relative inline-flex h-6 w-11 items-center rounded-full transition-colors border border-white/30 backdrop-blur-md ${matrixEnabled ? 'bg-emerald-500/40' : 'bg-white/10'}`}>
                   <input

@@ -5,6 +5,7 @@ const Hero = () => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [isHeroVisible, setIsHeroVisible] = useState(false);
 
   // Array of texts to cycle through
   const texts = [
@@ -41,13 +42,26 @@ const Hero = () => {
     return () => clearTimeout(timeout);
   }, [displayText, currentIndex, isDeleting, texts]);
 
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    if (mediaQuery.matches) {
+      setIsHeroVisible(true);
+      return;
+    }
+
+    const frame = requestAnimationFrame(() => setIsHeroVisible(true));
+
+    return () => cancelAnimationFrame(frame);
+  }, []);
+
   return (
     // Main container for the profile card, styled with Tailwind CSS for dark background,
     // centered content, minimum height, and Inter font.
-    <div className="min-h-screen bg-gray-900 flex flex-col items-center justify-center p-4 font-inter">
+    <div className={`min-h-screen flex flex-col items-center justify-center p-4 font-inter section-motion ${isHeroVisible ? 'is-visible' : ''} bg-black/20`}>
       {/* Profile picture/initials container. Uses a blue background, rounded shape,
           and centers the text "JP". */}
-      <div className="w-32 h-32 bg-emerald-600 rounded-full flex items-center justify-center mb-6 animate-pulse">
+      <div className="interactive-image w-32 h-32 bg-emerald-600 rounded-full flex items-center justify-center mb-6 border border-white/20 shadow-[0_25px_45px_-30px_rgba(16,185,129,0.65)]" aria-hidden="true">
         <span className="text-white text-5xl font-bold">H</span>
       </div>
 
@@ -78,7 +92,7 @@ const Hero = () => {
           href="https://github.com/Mickey3970"
           target="_blank"
           rel="noopener noreferrer"
-          className="px-6 py-3 rounded-lg border border-white/30 text-white font-semibold backdrop-blur-md bg-white/10 hover:bg-white/20 transition-all duration-300 shadow-lg text-center"
+          className="interactive-button transform-gpu transition-transform duration-300 ease-in-out px-6 py-3 rounded-lg border border-white/30 text-white font-semibold backdrop-blur-md bg-white/10 hover:bg-white/20 shadow-lg text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
         >
           Explore My Projects
         </a>
@@ -88,7 +102,7 @@ const Hero = () => {
         <a
           href="/Resume.pdf"
           download="Harsh_Kumar_Singh_Resume.pdf"
-          className="px-6 py-3 rounded-lg border border-white/30 text-white font-semibold backdrop-blur-md bg-white/10 hover:bg-white/20 transition-all duration-300 shadow-lg text-center"
+          className="interactive-button transform-gpu transition-transform duration-300 ease-in-out px-6 py-3 rounded-lg border border-white/30 text-white font-semibold backdrop-blur-md bg-white/10 hover:bg-white/20 shadow-lg text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900"
         >
           Download Resume
         </a>

@@ -58,7 +58,7 @@ export default function MatrixBackground({ enabled }) {
         let frameId = null;
 
         const drawFrame = () => {
-            const fadeOpacity = 0.08;
+            const fadeOpacity = 0.065;
             ctx.fillStyle = `rgba(0, 0, 0, ${fadeOpacity})`;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -70,10 +70,10 @@ export default function MatrixBackground({ enabled }) {
                 const y = drops[i] * fontSize;
                 const char = CHAR_SET[Math.floor(Math.random() * CHAR_SET.length)];
 
-                const isBrightHead = Math.random() < 0.05;
+                const isBrightHead = Math.random() < 0.055;
                 ctx.fillStyle = isBrightHead
-                    ? 'rgba(200, 255, 200, 0.6)'
-                    : 'rgba(0, 255, 140, 0.25)';
+                    ? 'rgba(200, 255, 220, 0.7)'
+                    : 'rgba(90, 210, 175, 0.32)';
                 ctx.fillText(char, x, y);
 
                 if (y > canvas.height && Math.random() > 0.975) {

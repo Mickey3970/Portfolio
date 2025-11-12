@@ -7,6 +7,8 @@ html {
 /* Matrix theme base: darker background and emerald accents */
 :root {
   --matrix-accent: 16 185 129; /* emerald-500 */
+  --motion-duration: 0.4s;
+  --motion-duration-long: 0.5s;
 }
 
 .matrix-theme body {
@@ -22,4 +24,142 @@ html {
 }
 .bg-matrix {
   background-color: rgba(var(--matrix-accent), 0.15);
+}
+
+.interactive-link,
+.interactive-card,
+.interactive-image,
+.interactive-button,
+.interactive-icon {
+  transition: transform var(--motion-duration) ease-in-out,
+    opacity var(--motion-duration) ease-in-out,
+    background-color var(--motion-duration) ease-in-out,
+    border-color var(--motion-duration) ease-in-out,
+    color var(--motion-duration) ease-in-out,
+    box-shadow var(--motion-duration) ease-in-out,
+    filter var(--motion-duration) ease-in-out;
+  transform: translateZ(0);
+  will-change: transform, opacity;
+}
+
+.interactive-link:hover,
+.interactive-link:focus-visible,
+.interactive-button:hover,
+.interactive-button:focus-visible,
+.interactive-icon:hover,
+.interactive-icon:focus-visible,
+.interactive-image:hover,
+.interactive-image:focus-visible {
+  transform: translate3d(0, -3px, 0);
+}
+
+.interactive-card {
+  position: relative;
+  transition: transform var(--motion-duration) ease-in-out,
+    opacity var(--motion-duration) ease-in-out,
+    border-color var(--motion-duration) ease-in-out,
+    background-color var(--motion-duration) ease-in-out,
+    box-shadow var(--motion-duration) ease-in-out;
+}
+
+.interactive-card:hover,
+.interactive-card:focus-within {
+  border-color: rgba(var(--matrix-accent), 0.45);
+  background-color: rgba(15, 23, 23, 0.35);
+  box-shadow: 0 30px 60px -30px rgba(16, 185, 129, 0.45);
+  transform: translate3d(0, -6px, 0);
+}
+
+.interactive-image {
+  animation: floatPulse 6s ease-in-out infinite;
+}
+
+@keyframes floatPulse {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -6px, 0);
+  }
+}
+
+.nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color var(--motion-duration) ease-in-out;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.3rem;
+  height: 2px;
+  background: rgba(var(--matrix-accent), 0.55);
+  transform: scaleX(0);
+  transform-origin: center;
+  opacity: 0;
+  transition: transform var(--motion-duration) ease-in-out,
+    opacity var(--motion-duration) ease-in-out;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+.section-motion {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition: transform var(--motion-duration-long) ease-in-out,
+    opacity var(--motion-duration-long) ease-in-out;
+}
+
+.section-motion.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.mobile-menu {
+  animation: slideFadeDown var(--motion-duration) ease-in-out both;
+}
+
+@keyframes slideFadeDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -12px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interactive-link,
+  .interactive-card,
+  .interactive-image,
+  .interactive-button,
+  .interactive-icon,
+  .section-motion,
+  .mobile-menu {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transform: none !important;
+  }
+
+  .section-motion {
+    opacity: 1;
+  }
 }
