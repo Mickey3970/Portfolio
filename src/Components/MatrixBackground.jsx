@@ -33,7 +33,7 @@ export default function MatrixBackground({ enabled }) {
             ctx.font = `${fontSize}px monospace`;
             ctx.textBaseline = 'top';
 
-            const columnCount = Math.max(1, Math.floor(canvas.width / (fontSize * 1.2)));
+            const columnCount = Math.max(1, Math.floor(canvas.width / fontSize));
             dropsRef.current = Array.from(
                 { length: columnCount },
                 () => Math.floor(Math.random() * (canvas.height / fontSize))
