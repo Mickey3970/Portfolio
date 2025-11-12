@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 
 const CHAR_SET = 'ｱｶｻﾀﾅﾊﾏﾔﾗﾜ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZｶﾀｶﾅ';
+const CHAR_ARRAY = CHAR_SET.split('');
 
 export default function MatrixBackground({ enabled }) {
     const canvasRef = useRef(null);
@@ -32,7 +33,7 @@ export default function MatrixBackground({ enabled }) {
             ctx.font = `${fontSize}px monospace`;
             ctx.textBaseline = 'top';
 
-            const columnCount = Math.max(1, Math.floor(canvas.width / fontSize));
+            const columnCount = Math.max(1, Math.floor(canvas.width / (fontSize * 1.2)));
             dropsRef.current = Array.from(
                 { length: columnCount },
                 () => Math.floor(Math.random() * (canvas.height / fontSize))
@@ -57,6 +58,8 @@ export default function MatrixBackground({ enabled }) {
 
         let frameId = null;
 
+        let frameStep = 0;
+
         const drawFrame = () => {
             const fadeOpacity = 0.065;
             ctx.fillStyle = `rgba(0, 0, 0, ${fadeOpacity})`;
@@ -64,11 +67,13 @@ export default function MatrixBackground({ enabled }) {
 
             const drops = dropsRef.current;
             const fontSize = fontSizeRef.current;
+            const stride = devicePixelRatioRef.current > 1.5 ? 2 : 1;
+            frameStep = (frameStep + 1) % stride;
 
-            for (let i = 0; i < drops.length; i++) {
+            for (let i = frameStep; i < drops.length; i += stride) {
                 const x = i * fontSize;
                 const y = drops[i] * fontSize;
-                const char = CHAR_SET[Math.floor(Math.random() * CHAR_SET.length)];
+                const char = CHAR_ARRAY[Math.floor(Math.random() * CHAR_ARRAY.length)];
 
                 const isBrightHead = Math.random() < 0.055;
                 ctx.fillStyle = isBrightHead

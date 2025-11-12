@@ -4,6 +4,12 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  overflow-x: hidden;
+  background-color: #050608;
+  color: #f8fafc;
+}
+
 /* Matrix theme base: darker background and emerald accents */
 :root {
   --matrix-accent: 16 185 129; /* emerald-500 */
